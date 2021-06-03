@@ -1,7 +1,7 @@
 import { Avatar } from "@chakra-ui/avatar";
-import { IconButton } from "@chakra-ui/button";
+import { Button, IconButton } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
-import { EmailIcon, Icon, SearchIcon } from "@chakra-ui/icons";
+import { EmailIcon, Icon, PhoneIcon, SearchIcon } from "@chakra-ui/icons";
 import { Box, Flex, Heading, HStack, Link } from "@chakra-ui/layout";
 
 import AccessibleLink from "components/AccessibleLink";
@@ -47,6 +47,11 @@ const Header = () => {
             fontSize="20px"
             icon={<EmailIcon />}
           />
+        </a>
+        <a href="tel:  +213661354595">
+          <Button aria-label="Call Sage" leftIcon={<PhoneIcon />}>
+            +213661354595
+          </Button>
         </a>
         <ThemeToggle />
       </HStack>
