@@ -20,7 +20,13 @@ function RenectArticle({ slug, imgUrl, title, createdAt }: IRenectArticle) {
         <HStack p="1">
           <Image src={imgUrl} width="6" height="6" />
 
-          <Button variant="ghost" fontWeight="500" size="lg">
+          <Button
+            variant="ghost"
+            justifyContent="start"
+            style={{ padding: "20px", flexGrow: 1, textAlign: "left" }}
+            fontWeight="500"
+            size="lg"
+          >
             <Box textAlign="left">
               <Text fontSize="sm">{createdAt}</Text>
               {title}
