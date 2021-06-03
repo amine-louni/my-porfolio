@@ -28,16 +28,19 @@ function RecentArticles() {
             imgUrl="/vue.png"
             title="how to use Vue context"
             slug="how-to-use-vue-context"
+            createdAt="20, Jun 2020"
           />
           <RecentArticle
             imgUrl="/react.png"
             title="When to use use memo "
             slug="how-to-use-vue-context"
+            createdAt="05, May 2020"
           />
           <RecentArticle
             imgUrl="/firebase.png"
             title="Build a real chat app with firbase only"
             slug="how-to-use-vue-context"
+            createdAt="19, August 2021"
           />
         </Flex>
       </Container>
