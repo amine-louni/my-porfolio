@@ -31,6 +31,7 @@ function RecentProjects({ reposData }: IRecentProjects) {
         <Flex flexWrap="wrap" gridGap="1.5">
           {reposData
             .filter((repo) => !repo.fork)
+            .filter((repo) => repo.name !== "amine-louni")
             .sort((a, b) => {
               console.log(a.fork, "fork");
               if (a.stargazers_count > b.stargazers_count) return -1;

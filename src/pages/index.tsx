@@ -16,7 +16,6 @@ interface IHome {
 }
 
 const Home = ({ worksData, reposData }: IHome) => {
-  console.log(reposData, "data================");
   return (
     <>
       <Hero />
