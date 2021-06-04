@@ -18,3 +18,21 @@ export const fetchAllRepos = async () => {
   const works = res.data;
   return works;
 };
+export const fetchAllPosts = async () => {
+  const res = await axios.get("https://portfolio-al.herokuapp.com/articles");
+  const works = res.data;
+  return works;
+};
+
+export const fetchOnePost = async (slug: string | string[] | undefined) => {
+  try {
+    const res = await axios.get(
+      `https://portfolio-al.herokuapp.com/articles?slug=${slug}`
+    );
+
+    const post = res.data;
+    return post;
+  } catch {
+    (err: Error) => console.log(err);
+  }
+};

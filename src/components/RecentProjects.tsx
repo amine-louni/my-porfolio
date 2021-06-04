@@ -18,7 +18,6 @@ interface IRecentProjects {
 }
 
 function RecentProjects({ reposData }: IRecentProjects) {
-  console.log(reposData, "====repos");
   return (
     <section style={{ paddingTop: 50 }}>
       <Container maxW="container.xl">
@@ -36,7 +35,6 @@ function RecentProjects({ reposData }: IRecentProjects) {
             .filter((repo) => repo.name !== "my_portfolio")
             .filter((repo) => repo.name !== "omac_workshop")
             .sort((a, b) => {
-              console.log(a.fork, "fork");
               if (a.stargazers_count > b.stargazers_count) return -1;
               else if (a.stargazers_count < b.stargazers_count) return 1;
               return 0;

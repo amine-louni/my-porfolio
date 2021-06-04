@@ -1,10 +1,9 @@
+import React from "react";
 import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
-import { Box, HStack, LinkBox, Text, VStack } from "@chakra-ui/layout";
+import { Box, Heading, HStack, LinkBox, Text, VStack } from "@chakra-ui/layout";
 
 import Link from "next/link";
-
-import React from "react";
 
 interface IRenectArticle {
   slug: string;
@@ -16,7 +15,7 @@ interface IRenectArticle {
 function RenectArticle({ slug, imgUrl, title, createdAt }: IRenectArticle) {
   return (
     <LinkBox width={"100%"} mb="1">
-      <Link href={`/article/${slug}`} as="article">
+      <Link href={`/posts/${slug}`}>
         <HStack p="1">
           <Image src={imgUrl} width="6" height="6" />
 
@@ -28,8 +27,9 @@ function RenectArticle({ slug, imgUrl, title, createdAt }: IRenectArticle) {
             size="lg"
           >
             <Box textAlign="left">
-              <Text fontSize="sm">{createdAt}</Text>
-              {title}
+              <Heading as="h5" size="md" fontWeight="500">
+                {title}
+              </Heading>
             </Box>
           </Button>
         </HStack>

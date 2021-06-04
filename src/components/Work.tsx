@@ -10,8 +10,6 @@ interface Iwork {
 }
 
 function Work({ thumbnail, url }: Iwork) {
-  console.log(thumbnail, "thuuuub");
-
   return (
     <Link
       className="mockup-box"
