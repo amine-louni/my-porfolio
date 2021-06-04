@@ -19,7 +19,6 @@ interface IWorks {
 }
 
 function Works({ worksData }: IWorks) {
-  console.log(worksData, "data================in");
   return (
     <section style={{ paddingTop: 50 }}>
       <Container maxW="container.xl">

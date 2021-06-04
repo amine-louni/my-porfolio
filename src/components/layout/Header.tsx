@@ -18,7 +18,11 @@ const Header = () => {
       <AccessibleLink href="/">
         <Flex align="center">
           <Avatar marginEnd="5" name="Dan Abrahmov" src="/me.jpeg" />
-          <Heading as="h1" size="md">
+          <Heading
+            display={{ base: "none", md: "inline-block" }}
+            as="h1"
+            size="md"
+          >
             Amine Louni
           </Heading>
         </Flex>
@@ -28,7 +32,8 @@ const Header = () => {
         <a target="_blank" href="https://www.linkedin.com/in/amine-louni/">
           <IconButton
             aria-label="Call Sage"
-            fontSize="20px"
+            size="sm"
+            fontSize="18px"
             icon={<RiLinkedinBoxFill />}
           />
         </a>
@@ -36,7 +41,8 @@ const Header = () => {
         <a target="_blank" href="https://github.com/amine-louni/">
           <IconButton
             aria-label="Call Sage"
-            fontSize="20px"
+            size="sm"
+            fontSize="18px"
             icon={<RiGithubFill />}
           />
         </a>
@@ -44,14 +50,28 @@ const Header = () => {
         <a href="mailto: amine.louni.dev@gmail.com">
           <IconButton
             aria-label="Call Sage"
-            fontSize="20px"
+            size="sm"
+            fontSize="18px"
             icon={<EmailIcon />}
           />
         </a>
         <a href="tel:  +213661354595">
-          <Button aria-label="Call Sage" leftIcon={<PhoneIcon />}>
+          <Button
+            display={{ base: "none", md: "inline-block" }}
+            aria-label="Call Sage"
+            size="sm"
+            leftIcon={<PhoneIcon />}
+          >
             +213661354595
           </Button>
+
+          <IconButton
+            display={{ base: "inline-block", md: "none" }}
+            aria-label="Call Sage"
+            size="sm"
+            fontSize="18px"
+            icon={<PhoneIcon />}
+          />
         </a>
         <ThemeToggle />
       </HStack>

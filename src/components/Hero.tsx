@@ -27,13 +27,8 @@ function Hero() {
   return (
     <header className="hero">
       <Container maxW="container.xl">
-        <Flex flexWrap="wrap" height="400px">
-          <VStack
-            width={["100%", "70%"]}
-            height="100%"
-            justifyContent="center"
-            align="start"
-          >
+        <Flex flexWrap="wrap" my="20">
+          <VStack height="100%" justifyContent="center" align="start">
             <Box>
               <Heading as="h1">Hy i'm Amine </Heading>
               <Box padding={4} borderRadius={4} marginY="8">
@@ -54,14 +49,6 @@ function Hero() {
               </Button>
             </Box>
           </VStack>
-          <Flex
-            height="100%"
-            justify="center"
-            align="center"
-            width={["100%", "30%"]}
-          >
-            <SomeImage />
-          </Flex>
         </Flex>
       </Container>
     </header>

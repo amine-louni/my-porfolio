@@ -19,10 +19,10 @@ function Tools() {
   return (
     <section style={{ paddingTop: 50 }}>
       <Container maxW="container.xl">
-        <Heading as="h2" marginBottom="5">
+        <Heading as="h2" marginBottom="5" textAlign="center">
           What i mostly use 🛠️
         </Heading>
-        <Stack direction="row">
+        <Stack direction="row" wrap="wrap" justify="center" gridGap="3">
           <Box padding="25" background="gray.100" rounded="md">
             <Image
               boxSize="70px"

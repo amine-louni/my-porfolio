@@ -19,7 +19,7 @@ function RenectProject({
 }) {
   return (
     <LinkBox
-      width={["100%", "100%", "50%", "33%"]}
+      width={["100%", "100%", "49%", "49%"]}
       as="a"
       p="5"
       href={htmlUrl}

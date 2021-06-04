@@ -32,6 +32,9 @@ function RecentProjects({ reposData }: IRecentProjects) {
           {reposData
             .filter((repo) => !repo.fork)
             .filter((repo) => repo.name !== "amine-louni")
+            .filter((repo) => repo.name !== "djaw")
+            .filter((repo) => repo.name !== "my_portfolio")
+            .filter((repo) => repo.name !== "omac_workshop")
             .sort((a, b) => {
               console.log(a.fork, "fork");
               if (a.stargazers_count > b.stargazers_count) return -1;
