@@ -7,6 +7,7 @@ import Layout from "components/layout";
 
 import customTheme from "styles/customTheme";
 import "styles/globals.css";
+import "../styles/mockup.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

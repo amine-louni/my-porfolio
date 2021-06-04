@@ -7,6 +7,7 @@ import Hero from "components/Hero";
 import RecentProjects from "components/RecentProjects";
 import RecentArticles from "components/RecentArticles";
 import Tools from "components/Tools";
+import Works from "components/Works";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <RecentProjects />
       <RecentArticles />
       <Tools />
+      <Works />
     </>
   );
 };
