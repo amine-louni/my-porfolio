@@ -1,34 +1,44 @@
+import { StarIcon } from "@chakra-ui/icons";
 import {
   Badge,
   Box,
   Heading,
+  HStack,
   LinkBox,
   LinkOverlay,
   Text,
 } from "@chakra-ui/layout";
 import React from "react";
 
-function RenectProject() {
+function RenectProject({
+  repoName,
+  repoDescription,
+  starNumber,
+  language,
+  htmlUrl,
+}) {
   return (
     <LinkBox
       width={["100%", "100%", "50%", "33%"]}
-      as="article"
+      as="a"
       p="5"
+      href={htmlUrl}
       borderWidth="1px"
       rounded="md"
     >
       <Box as="time" dateTime="2021-01-15 15:30:00 +0000 UTC">
-        <Badge>Reactjs</Badge> <Badge>javscript</Badge>
+        <Badge>{language}</Badge>
       </Box>
       <Heading size="md" my="2">
-        <LinkOverlay href="#">
-          New Year, New Beginnings: Smashing Workshops & Audits
+        <LinkOverlay isExternal href={htmlUrl}>
+          {repoName}
         </LinkOverlay>
       </Heading>
-      <Text>
-        Catch up on what’s been cookin’ at Smashing and explore some of the most
-        popular community resources.
-      </Text>
+      <Text>{repoDescription}</Text>
+      <HStack align="center">
+        <span> {starNumber} </span>
+        <StarIcon />
+      </HStack>
     </LinkBox>
   );
 }

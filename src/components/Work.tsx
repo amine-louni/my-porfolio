@@ -4,19 +4,27 @@ import { Link } from "@chakra-ui/layout";
 import Image from "next/image";
 import React from "react";
 
-function Work() {
+interface Iwork {
+  thumbnail: string;
+  url: string;
+}
+
+function Work({ thumbnail, url }: Iwork) {
+  console.log(thumbnail, "thuuuub");
+
   return (
     <Link
       className="mockup-box"
-      href="#"
+      href={url}
       target="_blank"
       width={["100%", "100%", "48%", "48%"]}
-      as="article"
+      as="a"
       rounded="lg"
       position="relative"
-      height="250"
+      height="350"
       overflow="hidden"
       mb="10"
+      isExternal
     >
       <div className="overlay">
         <ExternalLinkIcon fontSize="35" />
@@ -25,7 +33,7 @@ function Work() {
         layout="fill"
         objectFit="cover"
         objectPosition="top"
-        src="/aqad.jpeg"
+        src={thumbnail}
       />
     </Link>
   );

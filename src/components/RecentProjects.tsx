@@ -13,7 +13,12 @@ import RecentProject from "./RenectProject";
 import { Button } from "@chakra-ui/button";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
-function RecentProjects() {
+interface IRecentProjects {
+  reposData: [];
+}
+
+function RecentProjects({ reposData }: IRecentProjects) {
+  console.log(reposData, "====repos");
   return (
     <section style={{ paddingTop: 50 }}>
       <Container maxW="container.xl">
@@ -24,9 +29,25 @@ function RecentProjects() {
           </Button>
         </Heading>
         <Flex flexWrap="wrap" gridGap="1.5">
-          <RecentProject />
-          <RecentProject />
-          <RecentProject />
+          {reposData
+            .filter((repo) => !repo.fork)
+            .sort((a, b) => {
+              console.log(a.fork, "fork");
+              if (a.stargazers_count > b.stargazers_count) return -1;
+              else if (a.stargazers_count < b.stargazers_count) return 1;
+              return 0;
+            })
+            .map((name) => (
+              <RecentProject
+                key={name.id}
+                repoName={name.name}
+                repoDescription={name.description}
+                starNumber={name.stargazers_count}
+                language={name.language}
+                htmlUrl={name.html_url}
+              />
+            ))
+            .slice(0, 6)}
         </Flex>
       </Container>
     </section>

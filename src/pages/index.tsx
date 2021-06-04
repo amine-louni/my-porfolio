@@ -8,17 +8,35 @@ import RecentProjects from "components/RecentProjects";
 import RecentArticles from "components/RecentArticles";
 import Tools from "components/Tools";
 import Works from "components/Works";
+import { fetchAllRepos, fetchAllWorks } from "lib/stripeFetch";
 
-const Home = () => {
+interface IHome {
+  worksData: [];
+  reposData: [];
+}
+
+const Home = ({ worksData, reposData }: IHome) => {
+  console.log(reposData, "data================");
   return (
     <>
       <Hero />
-      <RecentProjects />
+      <RecentProjects reposData={reposData} />
       <RecentArticles />
       <Tools />
-      <Works />
+      <Works worksData={worksData} />
     </>
   );
+};
+
+export const getServerSideProps = async () => {
+  const worksData = await fetchAllWorks();
+  const reposData = await fetchAllRepos();
+  return {
+    props: {
+      worksData,
+      reposData,
+    },
+  };
 };
 
 export default Home;
