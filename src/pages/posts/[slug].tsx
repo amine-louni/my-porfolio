@@ -1,21 +1,13 @@
 import { Box, Container, Heading, HStack } from "@chakra-ui/layout";
-import { fetchAllWorks, fetchOnePost } from "lib/stripeFetch";
+import { fetchOnePost } from "lib/stripeFetch";
 import { NextPageContext } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import React, { Context, ContextType } from "react";
-import { IPost } from "types/merge";
-import unified from "unified";
-import parse from "remark-parse";
-import remark2react from "remark-react";
+import React from "react";
+
 import PostPreview from "components/PostPreview";
 
 function Post({ postData }: any) {
-  console.log(postData.slug);
-  const content = unified()
-    .use(parse)
-    .use(remark2react)
-    .processSync(postData.text).result;
   return (
     <>
       <Head>

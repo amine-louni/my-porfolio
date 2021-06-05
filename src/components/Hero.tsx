@@ -1,29 +1,15 @@
 import React from "react";
 import { Button } from "@chakra-ui/button";
-import { useColorMode } from "@chakra-ui/color-mode";
-import { Box, Flex, Heading, Container, VStack, Text } from "@chakra-ui/layout";
-import { useTheme } from "@emotion/react";
 
-import Image from "next/image";
+import { Box, Flex, Heading, Container, VStack, Text } from "@chakra-ui/layout";
 
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SomeImage from "./SomeImage";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
-var settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  arrows: false,
-  slidesToScroll: 1,
 
-  autoplaySpeed: 2000,
-};
+import { ArrowForwardIcon } from "@chakra-ui/icons";
+
 function Hero() {
-  const { breakpoints, colors } = useTheme();
-  const { colorMode } = useColorMode();
   return (
     <header className="hero">
       <Container maxW="container.xl">

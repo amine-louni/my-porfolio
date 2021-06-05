@@ -1,18 +1,5 @@
 import React from "react";
-import {
-  Heading,
-  Container,
-  LinkBox,
-  Box,
-  LinkOverlay,
-  Text,
-  Badge,
-  Flex,
-  Stack,
-} from "@chakra-ui/layout";
-import RecentArticle from "./RenectArticle";
-import { Button } from "@chakra-ui/button";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { Heading, Container, Box, Stack } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/react";
 
 function Tools() {

@@ -1,20 +1,21 @@
 import React from "react";
-import {
-  Heading,
-  Container,
-  LinkBox,
-  Box,
-  LinkOverlay,
-  Text,
-  Badge,
-  Flex,
-} from "@chakra-ui/layout";
+import { Heading, Container, Flex } from "@chakra-ui/layout";
 import RecentProject from "./RenectProject";
 import { Button } from "@chakra-ui/button";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 interface IRecentProjects {
-  reposData: [];
+  reposData: [IRepo];
+}
+interface IRepo {
+  id: string;
+  stargazers_count: string;
+  name: string;
+  fork: boolean;
+  description: string;
+  language: string;
+  html_url: string;
+  starNumber: string;
 }
 
 function RecentProjects({ reposData }: IRecentProjects) {

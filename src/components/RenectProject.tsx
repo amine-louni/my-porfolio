@@ -9,14 +9,20 @@ import {
   Text,
 } from "@chakra-ui/layout";
 import React from "react";
-
+interface IRepo {
+  repoName: string;
+  repoDescription: string;
+  language: string;
+  htmlUrl: string;
+  starNumber: string;
+}
 function RenectProject({
   repoName,
   repoDescription,
   starNumber,
   language,
   htmlUrl,
-}) {
+}: IRepo) {
   return (
     <LinkBox
       width={["100%", "100%", "49%", "49%"]}

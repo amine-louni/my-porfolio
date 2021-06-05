@@ -6,7 +6,7 @@ import emoji from "markdown-it-emoji";
 import hljs from "highlight.js";
 
 const getMarkdownText = (markdown: string) => {
-  const md = new MarkdownIt({
+  const md: MarkdownIt = new MarkdownIt({
     html: true,
     xhtmlOut: false,
     breaks: true,
@@ -35,7 +35,7 @@ const getMarkdownText = (markdown: string) => {
     .use(emoji);
   return md.render(markdown);
 };
-export default function PostPreview(props) {
+export default function PostPreview(props: { markdown: string }) {
   return (
     <article
       className="markdown-body"

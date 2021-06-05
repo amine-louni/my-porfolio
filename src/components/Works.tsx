@@ -1,21 +1,16 @@
 import React from "react";
-import {
-  Heading,
-  Container,
-  LinkBox,
-  Box,
-  LinkOverlay,
-  Text,
-  Badge,
-  Flex,
-} from "@chakra-ui/layout";
-import RecentArticle from "./RenectArticle";
+import { Heading, Container, Flex } from "@chakra-ui/layout";
+
 import { Button } from "@chakra-ui/button";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import Work from "./Work";
-import { fetchAllWorks } from "lib/stripeFetch";
+
 interface IWorks {
-  worksData: [];
+  worksData: [Iwork];
+}
+interface Iwork {
+  url: string;
+  thumbnail: [{ url: string }];
 }
 
 function Works({ worksData }: IWorks) {
