@@ -1,11 +1,13 @@
-import { Box, Container, Heading, HStack } from "@chakra-ui/layout";
-import { fetchOnePost } from "lib/stripeFetch";
-import { NextPageContext } from "next";
+import { Box, Container, Heading, HStack, Text } from "@chakra-ui/layout";
+import { fetchAllPosts, fetchOnePost } from "lib/apiFetch";
+import { GetStaticPropsContext, NextPageContext } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 
 import PostPreview from "components/PostPreview";
+import { IPost } from "types/merge";
+import { Tag } from "@chakra-ui/tag";
 
 function Post({ postData }: any) {
   return (
@@ -34,9 +36,19 @@ function Post({ postData }: any) {
         {/* <meta property="fb:app_id" content="your_app_id" />
         <meta name="twitter:site" content="@website-username" /> */}
       </Head>
-      <HStack>
+      <HStack align="start">
         <Image src={postData.logo[0].url} height="80" width="80" />
-        <Heading as="h1">{postData.title}</Heading>
+        <Box>
+          <Heading as="h1" marginBottom="3">
+            {postData.title}
+          </Heading>
+          <Text marginBottom="3">{postData.createdAt}</Text>
+          <Text>
+            {postData.keywords.split(",").map((keyword: string) => {
+              return <Tag mr="1">{keyword}</Tag>;
+            })}
+          </Text>
+        </Box>
       </HStack>
 
       <Box
@@ -56,16 +68,26 @@ function Post({ postData }: any) {
       <Container maxW="container.lg">
         <PostPreview markdown={postData.text} />
       </Container>
-      <div>{postData.logo[0].url}</div>
-      <div>{postData.tags}</div>
-      <div>{postData.thumbnail[0].url}</div>
     </>
   );
 }
+export const getStaticPaths = async () => {
+  const data: [IPost] = await fetchAllPosts();
 
-export const getServerSideProps = async (context: NextPageContext) => {
+  const paths = data.map((post) => {
+    return {
+      params: { slug: post.slug },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   // you also have access to the param postId from the context
-  const { slug } = context.query;
+  const { slug } = context.params!;
 
   const post = await fetchOnePost(slug);
 

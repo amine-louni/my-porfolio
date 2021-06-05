@@ -1,14 +1,9 @@
-import { Box } from "@chakra-ui/layout";
-
-import SomeText from "components/SomeText";
-import SomeImage from "components/SomeImage";
-import CTASection from "components/CTASection";
 import Hero from "components/Hero";
 import RecentProjects from "components/RecentProjects";
 import RecentArticles from "components/RecentArticles";
 import Tools from "components/Tools";
 import Works from "components/Works";
-import { fetchAllPosts, fetchAllRepos, fetchAllWorks } from "lib/stripeFetch";
+import { fetchAllPosts, fetchAllRepos, fetchAllWorks } from "lib/apiFetch";
 
 interface Iwork {
   url: string;
@@ -43,7 +38,7 @@ const Home = ({ worksData, reposData, postsData }: IHome) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const worksData = await fetchAllWorks();
   const reposData = await fetchAllRepos();
   const postsData = await fetchAllPosts();
