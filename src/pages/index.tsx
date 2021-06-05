@@ -10,9 +10,24 @@ import Tools from "components/Tools";
 import Works from "components/Works";
 import { fetchAllPosts, fetchAllRepos, fetchAllWorks } from "lib/stripeFetch";
 
+interface Iwork {
+  url: string;
+  thumbnail: [{ url: string }];
+}
+interface IRepo {
+  id: string;
+  stargazers_count: string;
+  name: string;
+  fork: boolean;
+  description: string;
+  language: string;
+  html_url: string;
+  starNumber: string;
+}
+
 interface IHome {
-  worksData: [];
-  reposData: [];
+  worksData: [Iwork];
+  reposData: [IRepo];
   postsData: [];
 }
 
