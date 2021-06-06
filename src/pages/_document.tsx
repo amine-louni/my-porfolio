@@ -36,8 +36,8 @@ class MyDocument extends Document {
 
           <meta property="og:image" content="/me.jpeg" />
           <meta property="og:image:type" content="image/png" />
-          <meta property="og:image:width" content="600" />
-          <meta property="og:image:height" content="600" />
+          <meta property="og:image:width" content="1024" />
+          <meta property="og:image:height" content="1024" />
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
