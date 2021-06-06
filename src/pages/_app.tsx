@@ -15,16 +15,14 @@ import firebase from "firebase/app";
 
 import "firebase/analytics";
 import "firebase/auth";
+import { useEffect } from "react";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  if (!firebase.apps.length) {
+  useEffect(() => {
     firebase.initializeApp(firebaseConfig);
-  } else {
     firebase.app(); // if already initialized, use that one
     firebase.analytics();
-  }
-  console.log(firebase.apps);
-
+  }, []);
   return (
     <ChakraProvider theme={customTheme}>
       <Head>
