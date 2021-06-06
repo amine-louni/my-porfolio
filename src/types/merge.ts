@@ -7,6 +7,6 @@ export interface IPost {
   slug: string;
   updatedAt: string;
   keywords: string;
-  thumbnail: string;
+
   summary: string;
 }
