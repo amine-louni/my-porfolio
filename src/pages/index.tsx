@@ -30,12 +30,13 @@ const Home = ({ worksData, postsData }: IHome) => {
       <Element name="about">
         <About />
       </Element>
-      <Element name="posts">
-        <RecentArticles postsData={postsData} />
-      </Element>
       <Element name="tools">
         <Tools />
       </Element>
+      <Element name="posts">
+        <RecentArticles postsData={postsData} />
+      </Element>
+
       <Element name="works">
         <Works worksData={worksData} />
       </Element>

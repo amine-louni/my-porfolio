@@ -7,11 +7,11 @@ function Tools() {
   return (
     <section style={{ paddingTop: 50 }}>
       <Container maxW="container.xl">
-        <Heading as="h2" marginBottom="5" textAlign="center">
+        <Heading as="h2" marginBottom="5">
           What i mostly use 🛠️
         </Heading>
 
-        <Stack direction="row" wrap="wrap" justify="center" gridGap="3">
+        <Stack direction="row" wrap="wrap" gridGap="3">
           <Box textAlign="center">
             <Box
               boxShadow="lg"

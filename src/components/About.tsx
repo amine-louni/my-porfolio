@@ -1,3 +1,4 @@
+import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Container, Heading, Link, Text } from "@chakra-ui/layout";
 
 import React from "react";
@@ -7,7 +8,12 @@ export default function About() {
     <Container maxW="container.xl">
       <Heading mb="5">About</Heading>
 
-      <Text fontSize={["md", "xl", "xl", "xl"]}>
+      <Text
+        padding="20px"
+        rounded="lg"
+        background={useColorModeValue("gray.100", "gray.700")}
+        fontSize={["md", "xl", "xl", "xl"]}
+      >
         My name is Amine louni, I'm a web developer based in Algeria . I
         describe myself as a passionate developer who loves coding, open source,
         and the web platform ❤️. Aside from my job, I like to create and
