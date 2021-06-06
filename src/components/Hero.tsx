@@ -11,12 +11,8 @@ import {
   HStack,
 } from "@chakra-ui/layout";
 
-// Import css files
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { EmailIcon } from "@chakra-ui/icons";
 
-import { ArrowForwardIcon, EmailIcon, PhoneIcon } from "@chakra-ui/icons";
-import Image from "next/image";
 import { Avatar } from "@chakra-ui/avatar";
 import { RiGithubFill, RiLinkedinBoxFill } from "react-icons/ri";
 import { Tooltip } from "@chakra-ui/tooltip";
@@ -73,7 +69,12 @@ function Hero() {
                 </Text>
               </Box>
 
-              <HStack gridGap="1" marginLeft="auto">
+              <HStack
+                gridGap="1"
+                marginLeft="auto"
+                justify={["center", "center", "start", "start"]}
+                marginRight="auto"
+              >
                 <Tooltip hasArrow label="Download my resume">
                   <Button
                     as="a"

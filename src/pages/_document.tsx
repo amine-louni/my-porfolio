@@ -1,8 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-const APP_NAME = "nextchakra-starter";
+const APP_NAME = "Amine Louni";
 const APP_DESCRIPTION =
-  "Next.js app template with Chakra-UI, TypeScript, and PWA configured";
+  "Amine louni is  developer from Algeria . I create bespoke websites &amp; mobile apps to help people go further online 🚀.";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
@@ -24,7 +24,7 @@ class MyDocument extends Document {
           <meta name="description" content={APP_DESCRIPTION} />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
-          <meta name="theme-color" content="#FFFFFF" />
+          <meta name="theme-color" content="purple" />
 
           {/* add your own app-icon */}
           {/* <link

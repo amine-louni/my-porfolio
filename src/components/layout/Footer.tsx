@@ -15,27 +15,9 @@ const Footer = () => {
           {new Date().getFullYear()} - <Link isExternal>Amine Louni</Link>
         </Text>
         <HStack gridGap="3">
-          <Link
-            aria-label="Deploy to Netlify"
-            isExternal
-            href="https://app.netlify.com/"
-          >
-            <Image height="7" src="/vercel.png" alt="Netlify deploy button" />
-          </Link>
-          <Link
-            aria-label="Deploy to strapi"
-            isExternal
-            href="https://app.netlify.com/"
-          >
-            <Image height="7" src="/strapi.svg" alt="Netlify strapi button" />
-          </Link>{" "}
-          <Link
-            aria-label="Deploy to strapi"
-            isExternal
-            href="https://app.netlify.com/"
-          >
-            <Image height="7" src="/next.png" alt="Netlify strapi button" />
-          </Link>
+          <Image height="7" src="/vercel.png" alt="Netlify deploy button" />
+
+          <Image height="7" src="/strapi.svg" alt="Netlify strapi button" />
         </HStack>
       </Flex>
     </Container>

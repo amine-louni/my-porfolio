@@ -6,16 +6,8 @@ import RecentArticles from "components/RecentArticles";
 import Tools from "components/Tools";
 import Works from "components/Works";
 import { fetchAllPosts, fetchAllRepos, fetchAllWorks } from "lib/apiFetch";
-import { Ref, RefObject, useRef } from "react";
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
-import Navigation from "../components/layout/Navigation";
+import { useRef } from "react";
+import { Element } from "react-scroll";
 
 interface Iwork {
   url: string;

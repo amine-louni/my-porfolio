@@ -31,7 +31,7 @@ function Post({ postData }: any) {
 
         <meta property="og:site_name" content={postData.title} />
         <meta name="twitter:image:alt" content={postData.logo[0].url} />
-
+        <title>{`Amine Louni | ${postData.title}`}</title>
         {/* <!--  Non-Essential, But Required for Analytics --> */}
 
         {/* <meta property="fb:app_id" content="your_app_id" />
