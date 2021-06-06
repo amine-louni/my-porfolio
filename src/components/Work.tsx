@@ -17,7 +17,7 @@ function Work({ thumbnail, url }: Iwork) {
       target="_blank"
       width={["100%", "100%", "48%", "48%"]}
       as="a"
-      rounded="lg"
+      rounded="3xl"
       position="relative"
       height="350"
       overflow="hidden"
@@ -25,7 +25,7 @@ function Work({ thumbnail, url }: Iwork) {
       isExternal
     >
       <div className="overlay">
-        <ExternalLinkIcon fontSize="35" />
+        <ExternalLinkIcon fontSize="35" color="#FFF" />
       </div>
       <Image
         layout="fill"

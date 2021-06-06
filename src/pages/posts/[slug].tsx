@@ -8,6 +8,7 @@ import React from "react";
 import PostPreview from "components/PostPreview";
 import { IPost } from "types/merge";
 import { Tag } from "@chakra-ui/tag";
+import dayjs from "dayjs";
 
 function Post({ postData }: any) {
   return (
@@ -36,36 +37,40 @@ function Post({ postData }: any) {
         {/* <meta property="fb:app_id" content="your_app_id" />
         <meta name="twitter:site" content="@website-username" /> */}
       </Head>
-      <HStack align="start">
-        <Image src={postData.logo[0].url} height="80" width="80" />
-        <Box>
-          <Heading as="h1" marginBottom="3">
-            {postData.title}
-          </Heading>
-          <Text marginBottom="3">{postData.createdAt}</Text>
-          <Text>
-            {postData.keywords.split(",").map((keyword: string) => {
-              return <Tag mr="1">{keyword}</Tag>;
-            })}
-          </Text>
-        </Box>
-      </HStack>
+      <Container maxW="container.xl">
+        <HStack align="start">
+          <Image src={postData.logo[0].url} height="80" width="80" />
+          <Box marginLeft="30px">
+            <Heading as="h1" marginBottom="3">
+              {postData.title}
+            </Heading>
+            <Text marginBottom="3">
+              {dayjs(postData.createdAt).format("DD MMM YYYY")}
+            </Text>
+            <Text>
+              {postData.keywords.split(",").map((keyword: string) => {
+                return <Tag mr="1">{keyword}</Tag>;
+              })}
+            </Text>
+          </Box>
+        </HStack>
 
-      <Box
-        backgroundPosition="center"
-        backgroundAttachment="fixed"
-        backgroundImage={`url(${postData.thumbnail[0].url})`}
-        rounded="md"
-        my="5"
-        height="300"
-        overflow="hidden"
-      >
-        {/* <img
+        <Box
+          backgroundPosition="center"
+          backgroundAttachment="fixed"
+          backgroundImage={`url(${postData.thumbnail[0].url})`}
+          rounded="md"
+          my="5"
+          height="300"
+          overflow="hidden"
+        >
+          {/* <img
           src={postData.thumbnail[0].url}
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         /> */}
-      </Box>
-      <Container maxW="container.lg">
+        </Box>
+      </Container>
+      <Container maxW="container.xl">
         <PostPreview markdown={postData.text} />
       </Container>
     </>

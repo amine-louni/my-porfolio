@@ -35,6 +35,7 @@ const Page404 = () => {
           <Text>It's Okay!</Text>
           <Link href="/" passHref>
             <Button
+              colorScheme="purple"
               backgroundColor={colorMode === "light" ? "gray.300" : "teal.500"}
             >
               Let's Head Back

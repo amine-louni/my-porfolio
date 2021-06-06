@@ -10,8 +10,21 @@ import customTheme from "styles/customTheme";
 import "styles/globals.css";
 import "../styles/mockup.css";
 import "../styles/PostPreview.css";
+import { firebaseConfig } from "config/firebase";
+import firebase from "firebase/app";
+
+import "firebase/analytics";
+import "firebase/auth";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  } else {
+    firebase.app(); // if already initialized, use that one
+    firebase.analytics();
+  }
+  console.log(firebase.apps);
+
   return (
     <ChakraProvider theme={customTheme}>
       <Head>

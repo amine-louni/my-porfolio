@@ -7,7 +7,9 @@ const CTASection = () => {
   return (
     <Box textAlign="center" marginTop={8}>
       <Link href="https://github.com/sozonome/nextchakra-starter" isExternal>
-        <Button leftIcon={<AiFillGithub />}>Open in Github</Button>
+        <Button colorScheme="purple" leftIcon={<AiFillGithub />}>
+          Open in Github
+        </Button>
       </Link>
       <Flex marginY={4} justifyContent="center" gridGap={2}>
         <Link

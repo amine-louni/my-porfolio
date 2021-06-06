@@ -19,7 +19,11 @@ function Works({ worksData }: IWorks) {
       <Container maxW="container.xl">
         <Heading as="h2" marginBottom="5">
           Recent front end Works 🎨{" "}
-          <Button size="sm" rightIcon={<ArrowForwardIcon />}>
+          <Button
+            colorScheme="purple"
+            size="sm"
+            rightIcon={<ArrowForwardIcon />}
+          >
             Show all
           </Button>
         </Heading>

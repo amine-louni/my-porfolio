@@ -8,6 +8,18 @@ const customTheme = extendTheme({
   },
   colors: {
     ...theme.colors,
+    brand: {
+      "50": "#efe5fa",
+      "100": "#d5c0f3",
+      "200": "#b995ec",
+      "300": "#9c68e5",
+      "400": "#8544df",
+      "500": "#6c16d8",
+      "600": "#6110d2",
+      "700": "#5001ca",
+      "800": "#3f00c4",
+      "900": "#1f00b6",
+    },
     /** Example */
     // teal: {
     //   ...theme.colors.teal,
