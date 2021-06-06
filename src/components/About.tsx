@@ -7,7 +7,7 @@ export default function About() {
     <Container maxW="container.xl">
       <Heading mb="5">About</Heading>
 
-      <Text fontSize={["lg", "xl", "2xl", "3xl"]}>
+      <Text fontSize={["md", "xl", "xl", "xl"]}>
         My name is Amine louni, I'm a web developer based in Algeria . I
         describe myself as a passionate developer who loves coding, open source,
         and the web platform ❤️. Aside from my job, I like to create and

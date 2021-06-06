@@ -6,14 +6,14 @@ import Footer from "./Footer";
 import Meta from "./Meta";
 import Navigation from "./Navigation";
 import { useRouter } from "next/router";
-
+import { useColorMode } from "@chakra-ui/color-mode";
 type LayoutProps = {
   children: ReactNode;
 };
 
 const Layout = ({ children }: LayoutProps) => {
   const router = useRouter();
-  console.log();
+  const { colorMode } = useColorMode();
 
   return (
     <>

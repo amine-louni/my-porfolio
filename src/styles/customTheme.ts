@@ -6,6 +6,7 @@ const customTheme = extendTheme({
     body: "Lexend, sans-serif",
     heading: "Lexend, serif",
   },
+
   colors: {
     ...theme.colors,
     brand: {
@@ -20,6 +21,9 @@ const customTheme = extendTheme({
       "800": "#3f00c4",
       "900": "#1f00b6",
     },
+    white: "#F7F7F7",
+    black: "#333",
+
     /** Example */
     // teal: {
     //   ...theme.colors.teal,
